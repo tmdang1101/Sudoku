@@ -117,7 +117,7 @@ public class BetaVersion_SudokuBoard extends JFrame
     public BetaVersion_SudokuBoard() {
     	
     	try {
-    		sudoku = new BetaVersion_Sudoku("MediumPuzzle.txt");
+    		sudoku = new BetaVersion_Sudoku("EasyPuzzle.txt");
         } catch (IOException e) {
         	throw new RuntimeException(e);
         }
