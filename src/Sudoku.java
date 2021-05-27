@@ -8,7 +8,6 @@ import java.util.*;
 import javax.swing.*;
 
 public class Sudoku {
-	JLabel label = new JLabel("title", SwingConstants.CENTER);
 	private String[][] board = new String[9][9];
 	private LinkedList<JButton> buttons = new LinkedList<JButton>();
 	private String newValue = " ";
@@ -21,7 +20,7 @@ public class Sudoku {
 	{
 		frame.setLayout(new BorderLayout());
 		
-		//GAME
+		//BOARDGAME
 		JPanel game = new JPanel(new GridLayout(9,9));
 		Scanner scan = new Scanner(new FileInputStream(filename));
     	for (int r = 0; r < board.length; r++) {
@@ -72,12 +71,6 @@ public class Sudoku {
 		}
 	}
 	
-	private class TitleListener implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			label.setText("new title");
-		}
-	}
-	
 	public void createKeyBoard() {
 		//KEYS
 		keys = new JFrame("Keys");
@@ -97,8 +90,6 @@ public class Sudoku {
 		
 		keys.pack();
 		keys.setVisible(true);
-		
-		
 	}
 	
 	public void errorMessage() {
@@ -116,11 +107,7 @@ public class Sudoku {
 	}
 	
 	
-	
-	
-	
-	
-	
+	//Check for valid Sudoku board
 	public boolean validBoard() {
     	for(int i = 0; i < 9; i++) {
     		if(!validRow(i))
@@ -184,6 +171,8 @@ public class Sudoku {
     	return false;
     }
     
+    
+    //Update board after each answer
     public void updateBoard() {
     	Iterator<JButton> it = buttons.iterator();
     	for (int r = 0; r < board.length; r++) {
@@ -193,6 +182,7 @@ public class Sudoku {
     	}
     }
     
+    //Check for a finished puzzle
     public boolean finishedBoard() {
     	int count = 0;
     	
@@ -206,8 +196,5 @@ public class Sudoku {
     		return true;
     	return false;
     }
-	
-	
-	
-	
+
 }
