@@ -161,8 +161,10 @@ public class Sudoku {
     	int n = 0;
     	for (int r = 0 + 3*(x-1); r < 0 + 3*x; r++) {
             for (int c = 0 + 3*(y-1); c < 0 + 3*y; c++) {
-            	num.add(board[r][c]);
-    			n++;
+            	if(!board[r][c].equals(" ")) {
+        			num.add(board[r][c]);
+        			n++;
+        		}
             }
     	}
     	
