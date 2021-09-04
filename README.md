@@ -23,4 +23,4 @@ Methods:
 ### BetaVersion
 
 - Running BetaVersion_Main.java will create a nice looking Sudoku board, but it doesn't actually work, yet.
-- This is what I wanted it to look like. The end version of the game is just a bunch of buttons, although the game does work. I didn't figure out how I can combine the two so that the buttons would work and I would also get good-looking graphics.
+- This is what I wanted it to look like. The game still works fine.
